@@ -1,4 +1,4 @@
-name: SamplePipeline
+name: generated_pipeline.yml
 trigger:
   branches:
     include:
