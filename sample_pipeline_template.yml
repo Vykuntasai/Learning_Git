@@ -1,0 +1,11 @@
+name: SamplePipeline
+trigger:
+  branches:
+    include:
+      - main
+pool:
+  name: Default
+jobs:
+  - job: Build
+    steps:
+      - script: echo "Building..."

@@ -1,0 +1,34 @@
+jobs:
+  greet_user:
+    steps:
+      - name: Ask for name
+        run: |
+          echo "Please enter your name:"
+          read name
+          echo "Hello, $name! Welcome to the YAML agent."
+
+      - name: Show date and time
+        run: date
+
+      - name: List files
+        run: ls -l
+
+  math_operations:
+    steps:
+      - name: Addition example
+        run: |
+          echo "Enter first number:"
+          read num1
+          echo "Enter second number:"
+          read num2
+          sum=$((num1 + num2))
+          echo "Sum is $sum"
+
+      - name: Multiplication example
+        run: |
+          echo "Enter first number:"
+          read num1
+          echo "Enter second number:"
+          read num2
+          prod=$((num1 * num2))
+          echo "Product is $prod"

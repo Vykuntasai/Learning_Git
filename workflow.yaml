@@ -1,0 +1,37 @@
+# jobs:
+#   build:
+#     steps:
+#       - name: Echo Hello
+#         run: echo "Hello from YAML job!"
+#       - name: List files
+#         run: ls -l
+#   test:
+#     steps:
+#       - name: Run tests
+#         run: pytest || echo "No tests found"
+
+version: "1.0"
+
+jobs:
+  setup:
+    steps:
+      - name: Install dependencies
+        run: echo "Installing dependencies..."
+      - name: Setup environment
+        run: echo "Setting up environment..."
+
+  build:
+    needs: setup
+    steps:
+      - name: Compile code
+        run: echo "Compiling code..."
+      - name: Run tests
+        run: echo "Running tests..."
+
+  deploy:
+    needs: build
+    steps:
+      - name: Build Docker image
+        run: echo "Building Docker image..."
+      - name: Push to registry
+        run: echo "Pushing Docker image..."

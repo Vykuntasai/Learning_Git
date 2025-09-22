@@ -1,0 +1,27 @@
+name: SamplePipeline
+trigger:
+  branches:
+    include:
+    - main
+jobs:
+- job: Build
+  pool:
+    name: azurepool
+  steps:
+  - script: echo 'Building the project...'
+  - script: echo 'Bash build step simulated'
+  - script: echo 'PowerShell build step simulated'
+- job: Test
+  pool:
+    name: azurepool
+  steps:
+  - script: echo 'Running unit tests...'
+  - script: echo 'Bash test step simulated'
+  - script: echo 'PowerShell test step simulated'
+- job: Deploy
+  pool:
+    name: azurepool
+  steps:
+  - script: echo 'Starting deployment...'
+  - script: docker run hello-world
+  - script: echo 'Deployment completed'
